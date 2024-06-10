@@ -1,0 +1,260 @@
+module 5
+
+Node js and Express js
+----------------------
+
+Backend concept
+-------------------
+-client- send request
+-api - application programming interface
+-json -  format of sharing data
+-jsom-method - GET,PUT,POST,DEl
+-CRUD operation --create,read,update,dele
+
+-restful architure
+
+MVC architure   --- MODEL VIEW CONTROLLER
+_______________
+-mongoDB is unstructred
+
+MODEL- structure in which datais stored
+
+VIEW-frontend  
+
+CONTROLLER-logic written    
+
+
+Routing -- path 
+database - data is stored
+
+Node.js
+_______________
+
+-Not a programming language
+-it provides a runtime environment for Java Script to run outside the browser
+-js is computer language
+-it uses vs-8 JavaScript Engine
+-chrome- vs-8 Engine
+
+features
+--------
+-extremly fast - can resolve multiple request at times
+-open source
+-single thread
+-extention   .js
+
+14th may
+----------
+check--local host,ip address--ipb4,ipb6,soap architure
+
+modules node.js
+----
+-modules are files/JS libraries that can be used in node.js application to provide specific functionalities
+
+- to include this module in our project we need to import that library
+  - require keyword - for import
+
+  syntax-- for import --- require('module name') or  const variable = require('module')
+
+ for  exporting -- module.exports
+
+ module types
+ _______________
+
+ 1)custom module--we make
+ 2)built in modules--already
+         1.file system module :-
+              -allow to work with files inside your programmes/pc 
+              -read,del,create,write
+
+
+              Operation:
+              ---------
+         -read file -readFile()
+         -create file - open()
+         -update - writeFile()
+         -del - unlink()
+         -rename- rename()
+
+         http modules
+         -------------
+         -allows nodejs to transfer data over http request
+         -it can be used to create http server that listen to a port and give response back to client
+
+
+  -createServer method () - to create http method
+
+  -https method
+  -------------
+  cant be done without certification 
+  
+
+  event modules - to generate event
+ __________________
+
+ -class EventEmmitter()
+ - to create event - on() method
+ -to execute - emit() method
+
+
+global object
+_____________
+
+-represent global scope and provides global variable and functions that can be accesed throughtout the programmes
+
+ex-console.log(), setTimeOut(),
+
+
+Environment variable
+`````````````````````
+
+-variable that are predetermined values that are typically used to provide 
+the ability to config a value in your code from outside the application
+
+Express
+~~~~~~~
+
+-Web application framework for node.js
+-JS based
+
+
+create server using Express
+```````````````````````````
+1)Create folder for server
+2)Install package.json-- npm init -y   ---provides npm configuartion
+3)edit the script key -package.json
+4)Install 
+    1.Express  -- npm i express - to create server
+    2.dotenv       npm i dotenv - it can load environment variable from .env file to process.env
+    3. cors           npm i cors- cross origin resource sharing - connect between frontend and server
+    4.mongoose      npm i mongoose.---to connect server server and database 
+
+npm i express dotenv cors mongoose
+
+node modules-- copy of library
+.................
+
+5)Create a .env file to hold environment variable
+6)create .gitignore
+7)Create index.js file -- 1.import .env library
+                          2.import expresss
+                          3import cors
+                          4.create server
+                   5.use cors to connect with frontend 
+                   6.server use cors to connect with the server for converting to normal format
+                   7.customise port for the server
+                   8.run server
+                   npm install -g nodemon 
+
+                   --in roueter import express
+
+                   //this router export to be imported in index js  
+
+                   16th-may
+                   ----------
+                   -api-axios-frontend--
+
+
+ 24th may
+ `````````
+ -token library - json web token - J W T
+-jwt commonly used in modern web application to securly transmit
+ information between the client and the server
+
+ creation
+ ````````
+ -install jwt library  here at Backend
+ -import the library using require keyword 
+ -sign () fn used --           
+
+ 27th may
+ ----------
+ addsectopn frontend--addingsection -- key 
+
+ how to handle upload content
+
+  //how to handle upload
+       //1)create object for formData class
+       const reqbody = new FormData()
+
+      //to add data append
+      ex:------
+      
+      reqbody.append("title",title)
+      reqbody.append("language",language)
+
+      may 28th--
+      --------
+      middleware
+      ----------
+      middleware is a function which can control request-response cycle
+
+      have 3 arguments--
+      1)request
+      2)response
+      3)next-- only after calling the next () conttroll in 
+      the request response cycle will be given to upcoming fn
+
+       2 types of middleware
+
+       1)application specific - it effct the entire applicstion- each and every request will go througgh middleware
+
+       2)router specific - present in only particular path. ex--jwt middleware(json web token)
+
+multer---router specific middleware -- inorder to handle upload content
+
+
+29th may
+_________
+
+flow
+ 
+
+ reqeust side
+
+add component> all api > commmon api > index.js > router >middle ware(if therer)>controller
+               <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  response side
+
+heree in userscheme(server side)
+const users = mongoose.model('users',userSchema)  ---users is mentioned for the mongoodb which collection
+                                                                   
+multer---router specific middleware -- inorder to handle upload content   
+
+Multer is a node.js middleware for handling multipart/form-data, which is primarily used for uploading files.
+
+Multer adds a  body object and a file or files object to the request object. 
+The body object contains the values of the text fields of the form, 
+the file or files object contains the files uploaded via the form.
+
+
+npm i multer   
+
+//importing multer
+
+
+file filters - for uploading of image in jpeg png formmat
+
+when call back is false --file is rejected
+when true - acccepted
+
+31st may
+deconstrution in curly braclet
+///query parameter= path?key=value
+
+
+june 4th 2024
+``````````````
+react data sharing ways--props,statelift,redux method
+
+4)context api --
+
+//method --
+1)create context
+2)create state in context file
+3)destrcutre children(predefined ) -- to access content by every component
+4)children props added---to provide context to all compoennt
+5)in value attribute write what can be accesd
+6)wrap app from main.jsx in context
+
+
+useContext hook--to access context
